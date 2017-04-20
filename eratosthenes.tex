@@ -1,0 +1,34 @@
+\begin{tikzpicture}[scale=1.0]
+
+\begin{scope}[rotate=-23]
+
+% Earth
+\draw (0,0) coordinate (earthcenter) circle (5cm);
+\draw[dotted] (0,5) -- (0,-5); % axis of rotation
+\draw[dotted] (-5,0) -- (5,0); % equator
+\draw[dashed, gray!50] (23:5) -- (180-23:5) node[midway, rotate=-23, above] {tropic cancer}; % tropic cancer
+\filldraw (earthcenter) circle (0.1cm); % earth center
+
+% well
+\draw[orange] (23:5) -- (23:12) coordinate (suntropic) node[midway, above] {Sun Ray}; %sun tropic
+\draw[blue, line width=5] (23:4) -- (23:5);
+\draw[blue, dashed] (23:4) -- (0,0);
+
+% tower
+\draw[blue, line width=5] 
+  (40:5) coordinate (towerbottom)
+  -- ++(40:5) coordinate (towertop);
+\draw[orange] (towertop) -- ++(180+23:10) coordinate (towerray);
+\draw[orange] (towertop) -- ++(23:2);
+\draw[blue,dashed] (towerbottom) -- (0,0); 
+
+\draw pic["$7.2$", draw=red, <->, angle eccentricity=1.2, angle radius=2cm] {angle=towerray--towertop--towerbottom};
+\draw pic["$7.2$", draw=red, <->, angle eccentricity=1.2, angle radius=2cm] {angle=suntropic--earthcenter--towerbottom};
+\end{scope}
+
+% Sun 
+\filldraw[fill=yellow] (20,0) circle (3) node[above] {Sun};
+
+\draw (0,-6) circle (0cm);
+
+\end{tikzpicture}

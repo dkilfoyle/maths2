@@ -1,0 +1,10 @@
+\begin{tikzpicture}[line width=0.2mm,scale=1.0545]
+\fill[gray](5,0) circle (0.85cm);
+\draw[dashed](0,0) circle (5cm);
+\fill[black] (5,0) circle (0.05cm);
+\draw
+    (-10:7cm) coordinate (a)
+    -- (0,0) coordinate (b)
+    -- (10:7cm) coordinate (c)
+    pic["$\alpha=0.5$", draw=red, <->, angle eccentricity=1.5, angle radius=2cm] {angle=a--b--c};
+\end{tikzpicture}

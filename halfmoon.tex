@@ -1,0 +1,22 @@
+\begin{tikzpicture}[scale=1.0]
+
+\def\eclipseangle{20}
+
+% Sun 
+\filldraw[fill=yellow] (20,0) circle (3) node[above] {Sun};
+
+% Earth
+\filldraw[fill=blue!40] (0,-10) circle (2) node[below] {Earth};
+
+% Moon
+\draw[fill=gray!50] (0,1) arc(90:270:1) -- cycle;
+\draw[fill=white] (0,-1) arc(-90:90:1) -- cycle;
+\draw (0,0) node[above] {Moon};
+
+\draw (0,0) coordinate (M) -- 
+  (20,0) coordinate (S) --
+  (0,-10) coordinate (E) node[midway, below] {$d_s$} --
+  cycle node[midway, left] {$d_m$}
+  pic["$\alpha=89.853$", draw=red, <->, angle eccentricity=1.5, angle radius=2.5cm] {angle=S--E--M};
+
+\end{tikzpicture}
