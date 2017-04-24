@@ -1,0 +1,41 @@
+\begin{tikzpicture}
+
+% Mercury
+\def\eccentricity{0.205615}
+\def\semimajor{0.38709821}
+\def\semiminor{0.37882583}
+% Ellipse
+\draw (\eccentricity*\semimajor,0) ellipse [x radius=\semimajor, y radius=\semiminor];
+% Circle
+\draw[dotted] (0,0) circle(\semimajor);
+
+% Venus
+\def\eccentricity{0.006820}
+\def\semimajor{0.723332}
+\def\semiminor{0.723315}
+% Ellipse
+\draw (\eccentricity*\semimajor,0) ellipse [x radius=\semimajor, y radius=\semiminor];
+% Circle
+\draw[dotted] (0,0) circle(\semimajor);
+
+% Earth
+\def\eccentricity{0.016750}
+\def\semimajor{1.0000001124}
+\def\semiminor{0.9998604869}
+% Ellipse
+\draw (\eccentricity*\semimajor,0) ellipse [x radius=\semimajor, y radius=\semiminor];
+% Circle
+\draw[dotted] (0,0) circle(\semimajor);
+
+% Mars
+\def\eccentricity{0.093312}
+\def\semimajor{1.52366231}
+\def\semiminor{1.51700011}
+% Ellipse
+\draw (\eccentricity*\semimajor,0) ellipse [x radius=\semimajor, y radius=\semiminor];
+% Circle
+\draw[dotted] (0,0) circle(\semimajor);
+
+%sun
+\filldraw[orange] (0,0) circle (0.1cm);
+\end{tikzpicture}

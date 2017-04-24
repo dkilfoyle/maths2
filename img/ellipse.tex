@@ -1,0 +1,34 @@
+\begin{tikzpicture}[scale=0.1]
+
+% semiminor = semimajor * sqrt(1-e^2)
+
+% Pluto
+\def\eccentricity{0.7488}
+\def\semimajor{39.48168677} %in AU
+
+\pgfmathparse{\semimajor*sqrt(1-(\eccentricity)^2)}
+\let\semiminor\pgfmathresult
+
+% Ellipse
+\begin{scope}[rotate=34] % longitude of perihelion
+\draw(0,0) ellipse [x radius=\semimajor, y radius=\semiminor];
+
+% major axis
+\draw[dotted] (-\semimajor,0) -- (\semimajor,0);
+\draw[dotted] (0,-\semiminor) -- (0,\semiminor);
+
+%sun
+\filldraw[orange] (\eccentricity*\semimajor,0) circle (1cm);
+
+\draw[red] (-\semimajor,0) -- (0,0) node[midway, above, rotate=34] {Semi Major};
+\draw[red] (0,\semiminor) -- (0,0) node[midway, right, rotate=34] {Semi Minor};
+
+\end{scope}
+
+\draw (0,0) -- (34:50) coordinate (A);
+
+\draw (0,0) coordinate(B) -- (\semimajor,0) coordinate (C);
+\draw (0,0) pic["Longitude of perihelion", draw, <->, angle eccentricity=4, angle radius = 20] {angle=C--B--A};
+
+
+\end{tikzpicture}
